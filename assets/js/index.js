@@ -45,15 +45,22 @@ class Pokemon {
 }
 
 Pokemon.prototype.formatHtml = function() {
-  return `<div class="span-col-2">${this.name.toUpperase()}</div>
-          <div>picture</div>
-          <div>profile</div>
-          <div>type</div>
-          <div>stats</div>
+  return `<div class="span-col-2">
+            <h1>${this.name.toUpperCase()}</h1>
+          </div>
+          <div>
+            <h2>PICTURE</h2>
+          </div>
+          <div>
+            <h2>PROFILE</h2>
+          </div>
+          <div>TYPE</div>
+          <div>STATS</div>
           <div class="span-col-2">
-            <h3>description</h3>
-            <p>${this.description}</p>
-          </div>`;
+            <h2>DESCRIPTION</h2>
+            <p></p>
+          </div>
+  `;
 };
 
 function handleOnSearchSubmit() {
