@@ -15,21 +15,29 @@
         <header class="input-wrapper">
           <input type="text" value="pikachu" name="search-input" id="search-input" />
           <button type="button" id="search-button">Search</button>
-          <input type='checkbox' name="voice-activation" id="text-to-voice">Podex Voice?</input>
         </header>
         <div class="grid">
-          <div class="span-col-2">
+          <div class="span-col-2" id="header">
             <h1>NAME</h1>
           </div>
-          <div>
+          <div id="picture">
             <h2>PICTURE</h2>
+            <div class="grid-buttons">
+              <img src="" class="span-button-col-2" alt="pokemon placeholder" />
+              <button id="male-image-button" type="button">Male</button>
+              <button id="female-image-button" type="button">Female</button>
+            </div>
           </div>
-          <div>
+          <div id="profile">
             <h2>PROFILE</h2>
           </div>
-          <div>TYPE</div>
-          <div>STATS</div>
-          <div class="span-col-2">
+          <div id="type">
+            <h2>TYPE</h2>
+          </div>
+          <div id="stats">
+            <h2>STATS</h2>
+          </div>
+          <div class="span-col-2" id="description">
             <h2>DESCRIPTION</h2>
             <p></p>
           </div>

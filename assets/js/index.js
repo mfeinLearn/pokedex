@@ -48,18 +48,18 @@ class Pokemon {
 }
 
 Pokemon.prototype.formatHtml = function() {
-  return `<div class="span-col-2">
+  return `<div class="span-col-2" id="header">
             <h1>${this.name.toUpperCase()}</h1>
           </div>
-          <div>
+          <div id="picture">
             <h2>PICTURE</h2>
-            <div>
-              <img src=${this.sprites[0]} id="pokemon-sprite"/>
+            <div class="grid-buttons">
+              <img src=${this.sprites[0]} id="pokemon-sprite" class="span-button-col-2"/>
               <button id="male-image-button" type="button">Male</button>
               <button id="female-image-button" type="button">Female</button>
             </div>
           </div>
-          <div>
+          <div id="profile">
             <h2>PROFILE</h2>
             <ul>
               <li>Species: ${this.species}</li>
@@ -71,13 +71,13 @@ Pokemon.prototype.formatHtml = function() {
               <li>Abilities: ${this.abilities}</li>
             </ul>
           </div>
-          <div>
+          <div id="type">
             <h2>TYPE</h2>
             <ul>
             ${this.types.map(type => `<li> ${type} </li>`).join(' ')}
             </ul>
           </div>
-          <div>
+          <div id="stats">
             <h2>STATS</h2>
             <ul>
               ${this.stats
@@ -85,7 +85,7 @@ Pokemon.prototype.formatHtml = function() {
                 .join(' ')}
             </ul>
           </div>
-          <div class="span-col-2">
+          <div class="span-col-2" id="description">
             <h2>DESCRIPTION</h2>
             <p>${this.description}</p>
           </div>
@@ -94,14 +94,8 @@ Pokemon.prototype.formatHtml = function() {
 
 function handleOnSearchSubmit() {
   const submitButton = document.getElementById('search-button');
-  const synth = window.speechSynthesis;
-  const ukEnglishFemale = synth
-    .getVoices()
-    .find(voice => voice.voiceURI === 'Google UK English Female');
 
   submitButton.addEventListener('click', async function() {
-    const shouldVoiceReadDescription = document.getElementById('text-to-voice')
-      .checked;
 
     const inputValue = document
       .getElementById('search-input')
@@ -119,16 +113,6 @@ function handleOnSearchSubmit() {
 
     const formatedHtml = pokemon.formatHtml();
     document.getElementsByClassName('grid')[0].innerHTML = formatedHtml;
-
-    if (shouldVoiceReadDescription) {
-      const utterThis = new SpeechSynthesisUtterance(
-        `${pokemon.name} a ${pokemon.types} type pokemon, ${
-          pokemon.description
-        }`
-      );
-      utterThis.voice = ukEnglishFemale;
-      synth.speak(utterThis);
-    }
 
     document
       .getElementById('female-image-button')
