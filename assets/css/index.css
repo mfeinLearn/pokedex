@@ -1,5 +1,6 @@
 body {
   background-color: #851d41;
+  color: #fff;
 }
 
 .grid {
@@ -30,12 +31,13 @@ body {
 main {
   width: 50%;
   margin: 0 auto;
-  border: 2px solid #fff;
+  border: 2px solid #000;
   background-color: #db3056;
 }
 
 input {
-  border: 2px solid #fff;
+  border: 0;
+  border-bottom: 2px solid #000;
   background-color: transparent;
 }
 
@@ -45,8 +47,8 @@ h2 {
 }
 
 #picture, #profile, #type, #stats, #description {
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 #picture, #type, #stats, #profile {
@@ -54,13 +56,19 @@ h2 {
 }
 
 #picture, #type {
-  border-right: 2px solid #fff;
+  border-right: 2px solid #000;
 }
 
 #picture {
-  background-color: #ffb99a;
+  background-color: #d38a6b;
 }
 
 #profile, #stats {
-  border-left: 2px solid #fff;
+  border-left: 2px solid #000;
+} 
+
+button {
+  background-color: #fff;
+  border: 0;
+  padding: 5px;
 }
