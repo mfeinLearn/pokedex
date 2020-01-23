@@ -112,6 +112,8 @@ function handleOnSearchSubmit() {
     const pokemon = new Pokemon(pokemonData, pokemonSpeciesData);
 
     const formatedHtml = pokemon.formatHtml();
+    document.getElementById('search-input').value = ''
+    
     document.getElementsByClassName('grid')[0].innerHTML = formatedHtml;
 
     document
